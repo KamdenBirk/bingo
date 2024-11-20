@@ -21,18 +21,29 @@ li {
     padding-top: 7px;
     padding-bottom: 7px;
     text-align: center;
+    margin:auto;
+    margin-top: 20px;
+}
+
+.button {
+    border: 1px solid black;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
 }
 
 table {
     border-collapse: collapse;
     margin:auto;
+    width:50%;
 }
 
 td {
     border: 1px solid black;
     padding: 15px;
-    height: 80px;
-    width: 80px;
+    width: 15%;
+    height:fit-content;
 }
 
 input {

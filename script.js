@@ -1,14 +1,43 @@
-let entryList =  [];
+let entryList =  [
+    document.getElementById("entry1"),
+    document.getElementById("entry2"),
+    document.getElementById("entry3"),
+    document.getElementById("entry4"),
+    document.getElementById("entry5"),
+    document.getElementById("entry6"),
+    document.getElementById("entry7"),
+    document.getElementById("entry8"),
+    document.getElementById("entry9"),
+    document.getElementById("entry10"),
+    document.getElementById("entry11"),
+    document.getElementById("entry12"),
+    document.getElementById("entry13"),
+    document.getElementById("entry14"),
+    document.getElementById("entry15"),
+    document.getElementById("entry16"),
+    document.getElementById("entry17"),
+    document.getElementById("entry18"),
+    document.getElementById("entry19"),
+    document.getElementById("entry20"),
+    document.getElementById("entry21"),
+    document.getElementById("entry22"),
+    document.getElementById("entry23"),
+    document.getElementById("entry24")
+    ];
 const entryInputList = document.getElementById("entries");
 const addEntryButton = document.getElementById("button");
 
 const brick = document.getElementById("brick");
 
 addEntryButton.onclick = add;
-
+let i = 25;
 function add() {
     const inputBox = document.createElement("input");
-    document.getElementById("entries").insertBefore(inputBox,brick)
+    inputBox.type = "text";
+    entryInputList.lastChild.after(inputBox,entryInputList.lastChild)
+    entryInputList.lastElementChild.id = "entry"+i;
+    entryList.push(entryInputList.lastElementChild);
+    i+=1;
 }
 
 
@@ -37,3 +66,43 @@ const box23 = document.getElementById("23");
 const box24 = document.getElementById("24");
 const box25 = document.getElementById("25");
 
+const randButton = document.getElementById("random");
+
+randButton.onclick = randomize;
+
+function randomize() {
+    box1.textContent = entryList[Math.random()*entryList.length].textContent
+    box2.textContent = entryList[Math.random()*entryList.length].textContent
+    box3.textContent = entryList[Math.random()*entryList.length].textContent
+    box4.textContent = entryList[Math.random()*entryList.length].textContent
+    box5.textContent = entryList[Math.random()*entryList.length].textContent
+    box6.textContent = entryList[Math.random()*entryList.length].textContent
+    box7.textContent = entryList[Math.random()*entryList.length].textContent
+    box8.textContent = entryList[Math.random()*entryList.length].textContent
+    box9.textContent = entryList[Math.random()*entryList.length].textContent
+    box10.textContent = entryList[Math.random()*entryList.length].textContent
+    box11.textContent = entryList[Math.random()*entryList.length].textContent
+    box12.textContent = entryList[Math.random()*entryList.length].textContent
+    box14.textContent = entryList[Math.random()*entryList.length].textContent
+    box15.textContent = entryList[Math.random()*entryList.length].textContent
+    box16.textContent = entryList[Math.random()*entryList.length].textContent
+    box17.textContent = entryList[Math.random()*entryList.length].textContent
+    box18.textContent = entryList[Math.random()*entryList.length].textContent
+    box19.textContent = entryList[Math.random()*entryList.length].textContent
+    box20.textContent = entryList[Math.random()*entryList.length].textContent
+    box21.textContent = entryList[Math.random()*entryList.length].textContent
+    box22.textContent = entryList[Math.random()*entryList.length].textContent
+    box23.textContent = entryList[Math.random()*entryList.length].textContent
+    box24.textContent = entryList[Math.random()*entryList.length].textContent
+    box25.textContent = entryList[Math.random()*entryList.length].textContent
+}
+const saveButton = document.getElementById("save");
+saveButton.onclick = save;
+
+function save() {
+    let g = entryList.length;
+    while(g>0){
+        localStorage.setItem("entry"+g,entryList[g-1].value)
+        g-=1
+    }
+}
