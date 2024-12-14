@@ -1,43 +1,12 @@
-let entryList =  [
-    document.getElementById("entry1"),
-    document.getElementById("entry2"),
-    document.getElementById("entry3"),
-    document.getElementById("entry4"),
-    document.getElementById("entry5"),
-    document.getElementById("entry6"),
-    document.getElementById("entry7"),
-    document.getElementById("entry8"),
-    document.getElementById("entry9"),
-    document.getElementById("entry10"),
-    document.getElementById("entry11"),
-    document.getElementById("entry12"),
-    document.getElementById("entry13"),
-    document.getElementById("entry14"),
-    document.getElementById("entry15"),
-    document.getElementById("entry16"),
-    document.getElementById("entry17"),
-    document.getElementById("entry18"),
-    document.getElementById("entry19"),
-    document.getElementById("entry20"),
-    document.getElementById("entry21"),
-    document.getElementById("entry22"),
-    document.getElementById("entry23"),
-    document.getElementById("entry24")
-    ];
-const entryInputList = document.getElementById("entries");
+let entryList =  [];
+const entry = document.getElementById("entry")
 const addEntryButton = document.getElementById("button");
 
-const brick = document.getElementById("brick");
-
 addEntryButton.onclick = add;
-let i = 25;
+
 function add() {
-    const inputBox = document.createElement("input");
-    inputBox.type = "text";
-    entryInputList.lastChild.after(inputBox,entryInputList.lastChild)
-    entryInputList.lastElementChild.id = "entry"+i;
-    entryList.push(entryInputList.lastElementChild);
-    i+=1;
+    entryList.push(entry.textContent);
+    saveEntries()
 }
 
 
@@ -99,10 +68,10 @@ function randomize() {
 const saveButton = document.getElementById("save");
 saveButton.onclick = save;
 
+function saveEntries() {
+
+}
+
 function save() {
-    let g = entryList.length;
-    while(g>0){
-        localStorage.setItem("entry"+g,entryList[g-1].value)
-        g-=1
-    }
+    
 }
