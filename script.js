@@ -1,14 +1,22 @@
 let entryList =  [];
+
 const entry = document.getElementById("entry")
 const addEntryButton = document.getElementById("button");
+
 
 addEntryButton.onclick = add;
 
 function add() {
-    entryList.push(entry.textContent);
+    entryList.push(entry.value);
+    entry.value = "";
+    document.getElementById("list").innerHTML = entryList;
     saveEntries()
 }
 
+function loadEntries() {
+    entryList = [localStorage.getItem("entryList")];
+    document.getElementById("list").innerHTML = entryList;
+}
 
 const box1 = document.getElementById("1");
 const box2 = document.getElementById("2");
@@ -65,13 +73,9 @@ function randomize() {
     box24.textContent = entryList[Math.random()*entryList.length].textContent
     box25.textContent = entryList[Math.random()*entryList.length].textContent
 }
-const saveButton = document.getElementById("save");
-saveButton.onclick = save;
+const loadButton = document.getElementById("load");
+loadButton.onclick = loadEntries;
 
 function saveEntries() {
-
-}
-
-function save() {
-    
+    localStorage.setItem("entryList",entryList);
 }
