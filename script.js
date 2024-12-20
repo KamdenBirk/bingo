@@ -48,30 +48,32 @@ const randButton = document.getElementById("random");
 randButton.onclick = randomize;
 
 function randomize() {
-    box1.textContent = entryList[Math.random()*entryList.length].textContent
-    box2.textContent = entryList[Math.random()*entryList.length].textContent
-    box3.textContent = entryList[Math.random()*entryList.length].textContent
-    box4.textContent = entryList[Math.random()*entryList.length].textContent
-    box5.textContent = entryList[Math.random()*entryList.length].textContent
-    box6.textContent = entryList[Math.random()*entryList.length].textContent
-    box7.textContent = entryList[Math.random()*entryList.length].textContent
-    box8.textContent = entryList[Math.random()*entryList.length].textContent
-    box9.textContent = entryList[Math.random()*entryList.length].textContent
-    box10.textContent = entryList[Math.random()*entryList.length].textContent
-    box11.textContent = entryList[Math.random()*entryList.length].textContent
-    box12.textContent = entryList[Math.random()*entryList.length].textContent
-    box14.textContent = entryList[Math.random()*entryList.length].textContent
-    box15.textContent = entryList[Math.random()*entryList.length].textContent
-    box16.textContent = entryList[Math.random()*entryList.length].textContent
-    box17.textContent = entryList[Math.random()*entryList.length].textContent
-    box18.textContent = entryList[Math.random()*entryList.length].textContent
-    box19.textContent = entryList[Math.random()*entryList.length].textContent
-    box20.textContent = entryList[Math.random()*entryList.length].textContent
-    box21.textContent = entryList[Math.random()*entryList.length].textContent
-    box22.textContent = entryList[Math.random()*entryList.length].textContent
-    box23.textContent = entryList[Math.random()*entryList.length].textContent
-    box24.textContent = entryList[Math.random()*entryList.length].textContent
-    box25.textContent = entryList[Math.random()*entryList.length].textContent
+    box1.innerHTML = entryList[Math.random()*entryList.length]
+    box2.innerHTML = entryList[Math.random()*entryList.length]
+    box3.innerHTML = entryList[Math.random()*entryList.length]
+    box4.innerHTML = entryList[Math.random()*entryList.length]
+    box5.innerHTML = entryList[Math.random()*entryList.length]
+    box6.innerHTML = entryList[Math.random()*entryList.length]
+    box7.innerHTML = entryList[Math.random()*entryList.length]
+    box8.innerHTML = entryList[Math.random()*entryList.length]
+    box9.innerHTML = entryList[Math.random()*entryList.length]
+    box10.innerHTML = entryList[Math.random()*entryList.length]
+    box11.innerHTML = entryList[Math.random()*entryList.length]
+    box12.innerHTML = entryList[Math.random()*entryList.length]
+    box14.innerHTML = entryList[Math.random()*entryList.length]
+    box15.innerHTML = entryList[Math.random()*entryList.length]
+    box16.innerHTML = entryList[Math.random()*entryList.length]
+    box17.innerHTML = entryList[Math.random()*entryList.length]
+    box18.innerHTML = entryList[Math.random()*entryList.length]
+    box19.innerHTML = entryList[Math.random()*entryList.length]
+    box20.innerHTML = entryList[Math.random()*entryList.length]
+    box21.innerHTML = entryList[Math.random()*entryList.length]
+    box22.innerHTML = entryList[Math.random()*entryList.length]
+    box23.innerHTML = entryList[Math.random()*entryList.length]
+    box24.innerHTML = entryList[Math.random()*entryList.length]
+    box25.innerHTML = entryList[Math.random()*entryList.length]
+
+    console.log(entryList)
 }
 const loadButton = document.getElementById("load");
 loadButton.onclick = loadEntries;
@@ -79,3 +81,4 @@ loadButton.onclick = loadEntries;
 function saveEntries() {
     localStorage.setItem("entryList",entryList);
 }
+
