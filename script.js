@@ -14,7 +14,11 @@ function add() {
 }
 
 function loadEntries() {
-    entryList = [localStorage.getItem("entryList")];
+    entryLength = localStorage.getItem("entrylength")
+    while (entryLength > 0) {
+        entryLength -= 1;
+        entryList.push(localStorage.getItem("entryList"+entryLength));
+    }
     document.getElementById("list").innerHTML = entryList;
 }
 
@@ -48,37 +52,41 @@ const randButton = document.getElementById("random");
 randButton.onclick = randomize;
 
 function randomize() {
-    box1.innerHTML = entryList[Math.random()*entryList.length]
-    box2.innerHTML = entryList[Math.random()*entryList.length]
-    box3.innerHTML = entryList[Math.random()*entryList.length]
-    box4.innerHTML = entryList[Math.random()*entryList.length]
-    box5.innerHTML = entryList[Math.random()*entryList.length]
-    box6.innerHTML = entryList[Math.random()*entryList.length]
-    box7.innerHTML = entryList[Math.random()*entryList.length]
-    box8.innerHTML = entryList[Math.random()*entryList.length]
-    box9.innerHTML = entryList[Math.random()*entryList.length]
-    box10.innerHTML = entryList[Math.random()*entryList.length]
-    box11.innerHTML = entryList[Math.random()*entryList.length]
-    box12.innerHTML = entryList[Math.random()*entryList.length]
-    box14.innerHTML = entryList[Math.random()*entryList.length]
-    box15.innerHTML = entryList[Math.random()*entryList.length]
-    box16.innerHTML = entryList[Math.random()*entryList.length]
-    box17.innerHTML = entryList[Math.random()*entryList.length]
-    box18.innerHTML = entryList[Math.random()*entryList.length]
-    box19.innerHTML = entryList[Math.random()*entryList.length]
-    box20.innerHTML = entryList[Math.random()*entryList.length]
-    box21.innerHTML = entryList[Math.random()*entryList.length]
-    box22.innerHTML = entryList[Math.random()*entryList.length]
-    box23.innerHTML = entryList[Math.random()*entryList.length]
-    box24.innerHTML = entryList[Math.random()*entryList.length]
-    box25.innerHTML = entryList[Math.random()*entryList.length]
+    box1.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box2.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box3.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box4.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box5.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box6.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box7.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box8.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box9.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box10.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box11.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box12.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box14.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box15.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box16.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box17.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box18.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box19.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box20.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box21.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box22.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box23.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box24.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
+    box25.innerHTML = entryList[Math.floor(Math.random()*entryList.length)]
 
     console.log(entryList)
+    console.log(entryList[Math.floor(Math.random()*entryList.length)])
 }
 const loadButton = document.getElementById("load");
 loadButton.onclick = loadEntries;
 
 function saveEntries() {
-    localStorage.setItem("entryList",entryList);
+    for (i in entryList) {
+        localStorage.setItem("entryList"+i,entryList[i]);
+    }
+    localStorage.setItem("entrylength",entryList.length)
 }
 
